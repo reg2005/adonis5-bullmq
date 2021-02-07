@@ -1,6 +1,6 @@
 {
   "name": "adonis5-bullmq",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adonis 5 bullmq provider",
   "main": "build/index.js",
   "scripts": {
@@ -101,6 +101,11 @@
     "providers": [
       "adonis5-bullmq"
     ],
+    "env": {
+      "BULLMQ_REDIS_HOST": "127.0.0.1",
+      "BULLMQ_REDIS_PORT": 6379,
+      "BULLMQ_REDIS_PASSWORD": ""
+    },
     "templates": {
       "basePath": "./build/templates",
       "config": [
