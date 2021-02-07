@@ -9,7 +9,7 @@ import {
 export class BullMQClass {
   public connection: ConnectionOptions
   constructor(public config: typeof Config) {
-    this.connection = this.config.get('bullmq.connections.local')
+    this.connection = this.config.get('bullmq')
   }
   public queue<T, R>(name: string) {
     return new BullQueue<T, R>(name, { connection: this.connection })
