@@ -22,7 +22,6 @@ import { BullMQClass } from './../src/BullMQ'
 |
 */
 export default class BullMQProvider {
-  public static needsApplication = true
   constructor(protected container: IocContract) {}
 
   public register() {

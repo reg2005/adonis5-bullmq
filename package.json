@@ -95,5 +95,20 @@
   },
   "dependencies": {
     "bullmq": "^1.14.3"
+  },
+  "adonisjs": {
+    "types": "adonis5-bullmq",
+    "providers": [
+      "adonis5-bullmq"
+    ],
+    "templates": {
+      "basePath": "./build/templates",
+      "config": [
+        {
+          "src": "config.txt",
+          "dest": "bullmq"
+        }
+      ]
+    }
   }
 }
