@@ -59,7 +59,7 @@ export default class QueueListener extends BaseCommand {
 	}
 
   run(){
-    bullMQ.worker<TestProps, TestProps>(QueueNamesEnum.TestJob, async (job) => {
+    BullMQ.worker<TestProps, TestProps>(QueueNamesEnum.TestJob, async (job) => {
       console.log(job.data)
       // handle your job
       return job
@@ -74,7 +74,7 @@ export default class QueueListener extends BaseCommand {
 import BullMQ from '@ioc:Adonis/Addons/BullMQ'
 import {TestProps, QueueNamesEnum} from 'Contracts/QueueInterfaces'
 
-const queue = bullMQ.queue<TestProps, TestProps>(QueueNamesEnum.TestJob)
+const queue = BullMQ.queue<TestProps, TestProps>(QueueNamesEnum.TestJob)
 export default class IndexController {
   async send(){
     await queue.add('mytestJob', { name: 'anyName' })
