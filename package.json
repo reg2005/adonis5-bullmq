@@ -1,6 +1,6 @@
 {
   "name": "adonis5-bullmq",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Adonis 5 bullmq provider",
   "main": "build/index.js",
   "scripts": {
