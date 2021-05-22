@@ -1,4 +1,4 @@
-import { IocContract } from '@adonisjs/fold/build'
+import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 import Config from '@ioc:Adonis/Core/Config'
 import { BullMQClass } from './../src/BullMQ'
 
@@ -22,12 +22,12 @@ import { BullMQClass } from './../src/BullMQ'
 |
 */
 export default class BullMQProvider {
-  constructor(protected container: IocContract) {}
+  constructor(protected application: ApplicationContract) {}
 
   public register() {
     // Register your own bindings
-    this.container.singleton('Adonis/Addons/BullMQ', () => {
-      const config: typeof Config = this.container.use('Adonis/Core/Config')
+    this.application.container.singleton('Adonis/Addons/BullMQ', () => {
+      const config: typeof Config = this.application.container.use('Adonis/Core/Config')
       return new BullMQClass(config)
     })
   }

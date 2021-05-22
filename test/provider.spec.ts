@@ -38,7 +38,7 @@ test.group('Swagger enabled', (group) => {
   })
 
   test('should instantiate provider with succeed job', async (assert) => {
-    const bullMQProvider = new BullMQProvider(app.iocContainer)
+    const bullMQProvider = new BullMQProvider(app.application)
     bullMQProvider.register()
     await bullMQProvider.boot()
     const bullMQ: typeof BullMQ = app.application.container.use('Adonis/Addons/BullMQ')
