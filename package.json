@@ -1,6 +1,6 @@
 {
   "name": "adonis5-bullmq",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Adonis 5 bullmq provider",
   "main": "build/index.js",
   "scripts": {
@@ -59,7 +59,7 @@
     "pino-pretty": "^4.3.0",
     "prettier": "^2.2.1",
     "ts-mockito": "^2.6.1",
-    "typescript": "^4.2.4"
+    "typescript": "^4.6.3"
   },
   "types": "build/adonis-typings/index.d.ts",
   "typings": "build/adonis-typings/index.d.ts",
@@ -95,7 +95,7 @@
     "anyBranch": false
   },
   "dependencies": {
-    "bullmq": "^1.26.5"
+    "bullmq": "^1.78.2"
   },
   "adonisjs": {
     "types": "adonis5-bullmq",

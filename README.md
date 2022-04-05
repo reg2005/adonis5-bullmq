@@ -49,14 +49,14 @@ import BullMQ from '@ioc:Adonis/Addons/BullMQ'
 import {TestProps, QueueNamesEnum} from 'Contracts/QueueInterfaces'
 
 export default class QueueListener extends BaseCommand {
-	/**
-	 * Command Name is used to run the command
-	 */
-	public static commandName = 'queue:listener'
+  /**
+   * Command Name is used to run the command
+   */
+  public static commandName = 'queue:listener'
 
-	public static settings = {
-		loadApp: true,
-	}
+  public static settings = {
+    loadApp: true,
+  }
 
   run(){
     BullMQ.worker<TestProps, TestProps>(QueueNamesEnum.TestJob, async (job) => {

@@ -43,11 +43,15 @@ test.group('Swagger enabled', (group) => {
     await bullMQProvider.boot()
     const bullMQ: typeof BullMQ = app.application.container.use('Adonis/Addons/BullMQ')
     let isJobSuccess = false
-    bullMQ.worker<TestProps, TestProps>('testQueue', async (job) => {
-      console.log(job.data)
-      isJobSuccess = true
-      return job
-    })
+    bullMQ.worker<TestProps, TestProps>(
+      'testQueue',
+      async (job) => {
+        console.log(job.data)
+        isJobSuccess = true
+        return job
+      },
+      { concurrency: 1 }
+    )
     const queue = bullMQ.queue<TestProps, TestProps>('testQueue')
     await queue.add('testJob', { name: 'anyName' })
 
