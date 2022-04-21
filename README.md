@@ -62,8 +62,8 @@ export default class QueueListener extends BaseCommand {
     BullMQ.worker<TestProps, TestProps>(QueueNamesEnum.TestJob, async (job) => {
       console.log(job.data)
       // handle your job
-      return job
-    })
+      åreturn job
+  })
   }
 }
 ```
