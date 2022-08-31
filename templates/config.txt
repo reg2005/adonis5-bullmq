@@ -1,4 +1,4 @@
-import { BullMQConfig } from '@ioc:Adonis/Addons/BullMQ'
+import { ConnectionOptions as BullMQConfig } from 'bullmq'
 import Env from '@ioc:Adonis/Core/Env'
 export default {
   host: Env.get('BULLMQ_REDIS_HOST', '127.0.0.1') as string,

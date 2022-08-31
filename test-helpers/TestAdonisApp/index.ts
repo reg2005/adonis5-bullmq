@@ -75,7 +75,7 @@ export class AdonisApplication {
   private async registerProviders() {
     await this.application.setup()
     this.application.registerProviders()
-    const { providersWithShutdownHook, providersWithReadyHook } = (this.application as any) as {
+    const { providersWithShutdownHook, providersWithReadyHook } = this.application as unknown as {
       providersWithReadyHook: AdonisProvider[]
       providersWithShutdownHook: AdonisProvider[]
     }
